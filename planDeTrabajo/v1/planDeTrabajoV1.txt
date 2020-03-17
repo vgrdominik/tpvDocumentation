@@ -1,0 +1,128 @@
+PRIMERA ENTRADA AL SISTEMA
+
+-------- Compos de texto
+· Nombre fiscal.
+· Identificador fiscal (NIF, DNI, etc).
+· Dirección.
+· Código postal.
+· Población.
+· Provincia.
+------- Desplegable (<b>Si</b>/No por defecto)
+· Branding:
+    - Paleta de colores (Primario - #267699, Secundario - #70B0CC, Accent - #FF877A, Error - #FF5252, Warning - #FFC107, Validación - #4CAF50, Info - #D19BA3)
+    - Estilo
+        * Botones (Redondeado, Línea, <b>Texto</b>).
+        * Formularios (Caja, <b>Línea</b>).
+        * Tarjetas (Redondeado, Caja, <b>Forma</b>).
+        * Diálogos (Redondeado, Caja, <b>Forma</b>).
+· Clientes (SI / <b>NO</b>). No -> Ventas contado.
+· Layout TPV. A escojer columnas y filas de una série de opciones (1/3 columna, 2/3 columna por defecto). Drag and drop (Coger y arrastrar) de los siguientes widgets.
+    - Acciones (Maximizar, Abrir cajón, Salir, Refrescar y Avisos)
+    - Tíquets (Listado pendientes, Mostrar nombres SI / <b>NO</b>, Cobrar, Cobrar directo, Enviar, Enviar personalizado [Lista de checkboxs marcados por defecto], Guardar SI / <b>NO</b>, Cerrar SI / <b>NO</b>, Guardar y Cerrar, Precio total, Tíquet descuento, Tíquet Precio unidad, Tíquet Precio total línea, Tíquet Complementos, Tíquet Eliminar, Tíquet Eliminar línea, Tíquet Enviar SI / <b>NO</b>, Tíquet Cliente Desplegado SI / <b>NO</b>, Tíquet Cliente Enlace, Tíquet Cliente Modificar Cliente, Tíquet Cliente Descuentos temporales [Artículo, P.P. y Cliente], Tíquet Cliente Aplicación impuestos por zona SI / <b>NO</b>, Tíquet Cliente Aplicar recargo de equivalencia SI / <b>NO</b>, Tíquet Cliente Añadir IRPF SI / <b>NO</b>, Tíquet Cliente Tarifa [Seleccionable de las disponibles].
+    - Familias (Múltiples) (Imagen, Texto, Imagen Tamaño [Desplegable], Texto Tamaño [Desplegable])
+    - Cantidades
+        * Modo desplegable (SI, <b>NO</b>).
+        * Modo lineal.
+    - Buscador.
+    - Listado productos (Familia con múltiple o no. Productos con complementos o no, con precio o no, activo o no. Complemento libre o definido.) (Imagen, Texto, Imagen Tamaño [Desplegable], Texto Tamaño [Desplegable]).
+    - Características. Ejemplo: por recojer, primer plato, etc (Imagen, Texto, Imagen Tamaño [Desplegable], Texto Tamaño [Desplegable]).
+· Turnos (Si / <b>NO</b>) Si -> Colección de textbox y al abrir debe haber un textarea para la descripción (Opcional).
+· Códigos de barras (SI / <b>NO</b>).
+· Comedor (SI / <b>NO</b>).
+· SMTP:
+    - HOST.
+    - USUARIO.
+    - PASSWORD.
+    - PUERTO.
+    - TIPO ENCRIPTADO (..., <b>NO</b>.
+    - CORREO (<b>Mismo que el usuario</b> / NO).
+    - PASSWORD DEL CORREO (<b>Mismo que el usuario</b> / NO).
+
+
+ENTRADA AL SISTEMA
+
+· Formato de datos: JSON, CSV.
+· 1 proyecto -> Web responsive.
+             -> Windows (.exe), Mac (App), Linux (.sh). Impresión automática y trabajo en local (Con actualización semiautomática)
+· 1 proyecto -> App nativa iOS, Android, Windows Mobile.
+· Gestión de usuarios múltiples en un mismo dispositivo.
+    - Usuario administrador (Propietario, encargado, persona de confianza, etc)
+        -> Click TPV -> Modo empleado (E)
+        -> Cada x segundos configurables -> Modo empleado + publicidad (E + P)
+        (1)-> P -> Interacción (Click, tecla) -> Código de hasta 4 carácteres -> Modo empleado + trabajo (E + T)
+        (2)-> P -> Interacción (Click, tecla) -> Modo empleado + trabajo (E + T)
+        (1) + (2)-> Permisos (Nombre, Si o No)
+        (3)-> Modo publicidad.
+    - El usuario administrador puede configurar el identificador del terminal.
+    ____________________           ____________________           ____________________
+    |X|                |           |    __________    |           |                  |
+    |                  |           |   |__________|   |           |                  |
+    |      PUBLI       |<--------> |   (7)  (8)  (9)  |<--------->|      TPV         |
+    |                  |           |   (4)  (5)  (6)  |           |                  |
+    |                  |           |   (1)  (2)  (3)  |           |                  |
+    |__________________|           |________(0)_______|           |__________________|
+       (1), (2), (3)                        (1)                         (1), (2)
+
+DIALOGO COBRAR
+
+· Modificar o crear cliente (Nombre fiscal, DNI o NIF, Dirección, Código Postal, Población, Provincia)
+· Dividir tiquet por producto.
+    - Listado con productos.
+    - Linia divisores de productos.
+        * Dividir el producto entre N (divisor).
+        * Botón con el número escojido. Click resetea a 1.
+    - Al hacer click en un producto.
+        * Genera un nuevo tiquet donde:
+            + Se puede modificar o crear el cliente (Igual que el anterior).
+            + Se puede introducir el importe para saber el canvio.
+            + Se puede imprimir.
+            + Sale un resumen donde puedes tirar atrás productos.
+            + Sale el mismo sistema de botón que el tiquet normal para cobrar.
+
+CAJA
+
+· Por turno si está habilitado.
+· Gestión de conceptos.
+    - Nombre.
+    - Suma / Resta.
+    - Añadir / Modificar.
+· Listado de movimientos extra de caja. Botón eliminar linia.
+· Añadir movimiento.
+    - Escojer concepto (Select).
+    - Importe.
+    - Añadir.
+· Los movimientos de caja juntamente con los tiquets suman el total.
+
+GRAFICOS
+
+· Terminales.
+    - Importes cobrados por movimientos. Tiquets por modalidad de pago y movimientos de caja.
+    - Total terminale. Total todos los terminales (En caso de ser administrador).
+· Tíquets pendientes. Precio total.
+    - Botón mostrat tíquets pendientes y a revisar.
+        * Cobrar linea.
+        * Cobrar y revisar todo en efectivo.
+        * Revisar todo.
+· Comedores (SI / <b>NO</b>). Importe total por comedor.
+· Mesas (SI / <b>NO</b>). Importe total por mesa.
+· Comensales (SI / <b>NO</b>). Total por mesa y comedor. Total.
+· Gestor de franjas horarias.
+    - Franja a añadir. Hora inicio, hora fin, botón añadir.
+    - Listado con botón de eliminar.
+· Franjas.
+    - Producto. Unidades totales, importe unidad y importe total.
+    - Total franja.
+· Botón imprimir gráfica. Imprimir todas las gráficas.
+· Poder seleccionar x turnos (Configurables). Solo el administrador.
+· Poder seleccionar un turno del pasado. Solo el administrador.
+
+PROXIMOS PASOS
+
+· Pasar a limpio el plan de trabajo v1.
+· Desarrollo del prototipo v0.0.1.
+    - Todas las funcionalidades del plan de trabajo.
+· Datos procedentes de ficheros csv para demo.
+· Demo prototipo v0.0.1.
+--------
+23-03-2020
+· Plán de trabajo v2.
