@@ -1,3 +1,14 @@
+PLAN DE TRABAJO V1 PARA UNA TPV
+
+En este documento se detallan las funcionalidad que dispondrá una TPV el próximo 23 de Marzo de 2020.
+
+LICENCIA
+
+Dominio público.
+En la medida de lo posible según la ley, Ryu ha renunciado a todos los derechos de
+autor y derechos relacionados o relacionados con el Plan plande trabajo v1. Este
+trabajo se publica desde: España.
+
 PRIMERA ENTRADA AL SISTEMA
 
 -------- Compos de texto
